@@ -1,0 +1,16 @@
+<div class="container mt-5">
+  <h1><%= @article.title %></h1>
+
+  <p class="mt-4"><%= simple_format(@article.content) %></p>
+
+  <div class="d-flex gap-2 mt-4">
+    <%= link_to "Back", articles_path, class: "btn btn-secondary" %>
+
+    <%= link_to "Edit", edit_article_path(@article), class: "btn btn-primary" %>
+
+    <%= button_to "Delete", article_path(@article),
+        method: :delete,
+        data: { turbo_confirm: "Are you sure?" },
+        class: "btn btn-danger" %>
+  </div>
+</div>
